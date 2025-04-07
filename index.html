@@ -29,7 +29,7 @@
         <div class="author-container">
           <div class="author-image">
                         
-              <img src="">
+              <img src="./files/images/pranay_junare.jpeg">
             
             
           </div>
@@ -43,7 +43,7 @@
         <div class="author-container">
           <div class="author-image">
             
-            <img src="./files/aditya_bidwai.jpg">
+            <img src="./files/images/aditya_bidwai.jpg">
             
           </div>
           <p>
@@ -119,7 +119,7 @@
     
     <h2 id="abstract">Abstract</h2>
 
-<p>The problem of generalized robotic manipulation remains a fundamental challenge in robotics and embodied artificial intelligence. Previous works have demonstrated the effectiveness of vision-language models (VLMs) in robotic manipulation but they lack support for bimanual settings, generalization to diverse task variations, and long-horizon tasks. In this project, we attempt to enhance the existing approaches by addressing these limitations. First, we explore language-condition biman- ual robotic manipulation, a relatively underexplored subdomain as majority of the existing works focus on single-manipulator setup. Second, we attempt to achieve generalization to a degree of extent in varying 3D tasks, complexi- ties, object types, and environments - aiming to compete with the existing benchmarks. Third, we aim to explore SigLIP2, a recent VLM as an alternative to the state-of-the-art models like CLIP and VILA. Lastly, we plan condition our transformer architecture to output robot actions and train our model using an end-to-end Imitation learning framework. Through these contributions, we plan to advance generalization and robustness of language conditioned robotic manipulation.</p>
+<p>The problem of generalized robotic manipulation remains a fundamental challenge in robotics and embodied artificial intelligence. Previous works have demonstrated the effectiveness of vision-language models (VLMs) in robotic manipulation but they lack support for bimanual settings, generalization to diverse task variations, and long-horizon tasks. In this project, we attempt to enhance the existing approaches by addressing these limitations. First, we explore language-condition bimanual robotic manipulation, a relatively underexplored subdomain as majority of the existing works focus on single-manipulator setup. Second, we attempt to achieve generalization to a degree of extent in varying 3D tasks, complexities, object types, and environments - aiming to compete with the existing benchmarks. Third, we aim to explore SigLIP2, a recent VLM as an alternative to the state-of-the-art models like CLIP and VILA. Lastly, we plan condition our transformer architecture to output robot actions and train our model using an end-to-end Imitation learning framework. Through these contributions, we plan to advance generalization and robustness of language conditioned robotic manipulation.</p>
 
 <hr>
 
@@ -169,20 +169,11 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 <h2 id="approach">Approach</h2>
 
 <p>
-<b>What did you do exactly? How did you solve the problem? Why did you think it would be successful? Is anything new in your approach?</b>
+Our goal is to learn a single transformer-based model for a variety of different language-conditioned robot manipulation tasks. The input consists of (1) a language description of the task, (2) the current visual state (from RGB-D camera(s)), and (3) the current gripper state (open or closed).  The model should predict an action, specified by a target end-effector pose and gripper state at the next key-frame. The key-frames represent important or bottleneck steps of the end-effector during the task execution such as a pre-pick, grasp, or place pose. Our dataset consists of pre-generated RLBench (simulations) demonstrations open-sourced by (Shridhar et al., 2022). The authors have divided this dataset into train, validate, and test, containing 100, 25, and 25 episodes, respectively. This dataset is used to train the model with Imitation learning approach of behavior cloning. Our Transformer architecture is visualized in the image below. The input to the transformer is a language description of the task and virtual images of the scene point cloud. The text is converted into token embeddings using the pretrained CLIP model, while the virtual images are converted into token embeddings via patchify operations. For each virtual image, tokens belonging to the same image are processed via four attention layers. Finally, the processed image tokens as well as the language tokens are jointly processed using four attention layers. The 3D action is inferred using the resulting image tokens.
 </p>
 
-<p>
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</p>
+<p class="sys-img"><img src="./files/images/transformer_arch.png" alt="imgname"></p>
 
-<p>
-<b>What problems did you anticipate? What problems did you encounter? Did the very first thing you tried work?</b>
-</p>
-
-<p>
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-</p>
 
 <hr>
     
