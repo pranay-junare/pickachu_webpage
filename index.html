@@ -175,15 +175,9 @@ Our goal is to learn a single transformer-based model for a variety of different
     
 <h2 id="results">Results</h2>
 <p>
-<b>Got it! Here’s a simplified and more natural version of the paragraph, keeping it technical but easier to follow:
-
----
-
+<b>
 We trained the RVT-2 model on a single task—“put groceries into cupboard”—using a total of 100 task variations over 15 epochs. The training setup used a batch size of 4, three data loading workers, and a task-uniform sampling strategy. The process took around 16 hours to complete. We used the LAMB optimizer with a learning rate of 1.25e-5 and applied translation augmentation of ±12.5 cm and rotation augmentation of ±45° around the z-axis. Mixed precision training (AMP) and memory-efficient 8-bit optimizers were enabled to help with performance and GPU memory usage. The RVT-2 architecture uses a two-stage approach where a coarse location is predicted using three fixed RGB-D cameras (front, top, right), and then a zoomed-in view is used for fine action prediction. Loss curves (e.g., total loss, grip loss, and rotation loss) consistently decreased throughout training, indicating good convergence. Evaluation was done on 25 new variations of the same task using CoppeliaSim, which also allowed us to visualize results. The model was able to follow language instructions reasonably well, differentiate between objects, and pick items based on colors—even when the exact color was not in view, it would choose the closest match. However, we also found some limitations: the model struggles with understanding shape and texture, has trouble when shelves have multiple similar sections, and sometimes fails to grasp or place objects correctly. It’s also sensitive to misspellings in the language commands. While it can differentiate between different objects and colors to some extent, it still needs improvement in dealing with more complex scenes and instructions. Overall, the model showed solid performance on the chosen task, but further work is needed to make it more robust and accurate in varied conditions.
-
----
-
-Let me know if you want this in a PDF or if you’d like a short summary version too.</b>
+</b>
 </p>
 <p>
 Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
