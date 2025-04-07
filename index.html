@@ -168,7 +168,7 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 Our goal is to learn a single transformer-based model for a variety of different language-conditioned robot manipulation tasks. The input consists of (1) a language description of the task, (2) the current visual state (from RGB-D camera(s)), and (3) the current gripper state (open or closed).  The model should predict an action, specified by a target end-effector pose and gripper state at the next key-frame. The key-frames represent important or bottleneck steps of the end-effector during the task execution such as a pre-pick, grasp, or place pose. Our dataset consists of pre-generated RLBench (simulations) demonstrations open-sourced by (Shridhar et al., 2022). The authors have divided this dataset into train, validate, and test, containing 100, 25, and 25 episodes, respectively. This dataset is used to train the model with Imitation learning approach of behavior cloning. Our Transformer architecture is visualized in the image below. The input to the transformer is a language description of the task and virtual images of the scene point cloud. The text is converted into token embeddings using the pretrained CLIP model, while the virtual images are converted into token embeddings via patchify operations. For each virtual image, tokens belonging to the same image are processed via four attention layers. Finally, the processed image tokens as well as the language tokens are jointly processed using four attention layers. The 3D action is inferred using the resulting image tokens.
 </p>
 
-<p class="sys-img"><img src="./files/images/transformer_arch.png" alt="imgname"></p>
+<p class="sys-img"><img src="./files/media/transformer_arch.png" alt="imgname"></p>
 
 
 <hr>
@@ -208,7 +208,7 @@ Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed 
 <br>
 
 <hr>
-<!-- <h2 id="images">Demo Images</h2> -->
+<h2 id="images">Training Loss Curves</h2>
 
 <div class="image-container" style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
   <!-- Image 1 -->
